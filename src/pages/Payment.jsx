@@ -196,21 +196,7 @@ const Payment = () => {
 
         </div>
 
-        {/* Support */}
-        <div className="mt-8 p-8 bg-brand-green/5 rounded-[32px] flex flex-col md:flex-row items-center justify-between border border-brand-green/10 gap-6">
-           <div className="flex items-center gap-5">
-              <div className="w-14 h-14 bg-brand-green text-white rounded-2xl flex items-center justify-center shadow-xl rotate-3">
-                <AlertCircle size={28} />
-              </div>
-              <div className="text-center md:text-left">
-                <p className="text-base font-serif font-bold text-gray-900 leading-tight">Dificuldade com o pagamento?</p>
-                <p className="text-xs text-gray-500 font-medium tracking-tight">Nossa equipe está online pronto para te ajudar a finalizar seu pedido.</p>
-              </div>
-           </div>
-           <button className="w-full md:w-auto bg-brand-green text-white py-4 px-10 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-xl shadow-brand-green/20 hover:scale-105 transition-all">
-             Falar com Consultor
-           </button>
-        </div>
+
 
       </div>
     </div>
