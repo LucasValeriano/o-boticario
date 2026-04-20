@@ -100,8 +100,8 @@ app.post('/api/checkout', async (req, res) => {
 
     // 3. Save Order
     const order = await run(
-      'INSERT INTO orders (lead_id, pix_code, pix_qr_code, amount, status) VALUES (?, ?, ?, ?, ?)',
-      [lead.id, pixCode, qrCode, amount, 'PENDING']
+      'INSERT INTO orders (lead_id, pix_code, pix_qr_code, amount, status, external_ref) VALUES (?, ?, ?, ?, ?, ?)',
+      [lead.id, pixCode, qrCode, amount, 'PENDING', externalId]
     );
 
     // 4. Send CAPI InitiateCheckout
@@ -127,7 +127,33 @@ app.get('/api/orders/:id/status', async (req, res) => {
     const order = await get('SELECT * FROM orders WHERE id = ?', [req.params.id]);
     if (!order) return res.status(404).json({ message: 'Order not found' });
 
-    // O status agora refletirá apenas a realidade do banco de dados (PENDING até receber webhook/aprovação real)
+    // O status agora refletirá a realidade do banco de dados e da Paradise PIX API
+    if (order.status === 'PENDING' && order.external_ref) {
+      try {
+        const ParadisePixAPI = require('./paradise');
+        const pixAPI = new ParadisePixAPI();
+        const pdResult = await pixAPI.getTransactionByReference(order.external_ref);
+        
+        // Formato da ParadisePIX varia, mas se houver success e status == 'PAID'
+        // Considerando que a API retorna dados da transação. Adapte 'status' se necessário.
+        if (pdResult && pdResult.status === 'PAID') {
+          await run('UPDATE orders SET status = ? WHERE id = ?', ['PAID', req.params.id]);
+          order.status = 'PAID';
+          
+          // Fire Purchase CAPI
+          try {
+            const lead = await get('SELECT email, phone, cpf FROM leads WHERE id = ?', [order.lead_id]);
+            if (lead) {
+              sendCAPIEvent('Purchase', req, lead, { value: order.amount, currency: 'BRL' });
+            }
+          } catch (err) {
+            console.error('Failed to send CAPI Purchase:', err);
+          }
+        }
+      } catch (err) {
+        console.error('Erro ao checar status nativo:', err.message);
+      }
+    }
 
     res.json({ status: order.status });
   } catch (err) {

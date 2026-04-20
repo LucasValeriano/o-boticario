@@ -38,9 +38,15 @@ function initializeTables() {
       pix_qr_code TEXT,
       amount REAL,
       status TEXT DEFAULT 'pending',
+      external_ref TEXT,
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
       FOREIGN KEY(lead_id) REFERENCES leads(id)
-    )`);
+    )`, () => {
+      // Safely add column if it doesn't exist for older databases
+      db.run(`ALTER TABLE orders ADD COLUMN external_ref TEXT`, (err) => {
+        // Ignore error if column already exists
+      });
+    });
   });
 }
 
