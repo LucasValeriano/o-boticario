@@ -10,7 +10,7 @@ const Header = () => {
     <header className="sticky top-0 z-[100] w-full bg-white/80 backdrop-blur-xl border-b border-gray-100/50">
       {/* Banner de Frete Grátis */}
       <div className="bg-[#017a54] text-white text-[10px] sm:text-xs py-2 text-center font-bold tracking-[0.1em] uppercase">
-        Frete Grátis nas compras acima de R$ 199
+        Frete Grátis nas compras acima de R$ 99
       </div>
 
       <div className="container max-w-7xl mx-auto px-4 lg:px-8">

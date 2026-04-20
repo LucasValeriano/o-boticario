@@ -8,7 +8,7 @@ const CartDrawer = () => {
   const { cart, cartTotal, isCartOpen, setIsCartOpen, updateQuantity, removeFromCart } = useCart();
   const navigate = useNavigate();
   
-  const FREE_SHIPPING_THRESHOLD = 199.00;
+  const FREE_SHIPPING_THRESHOLD = 100.00;
   const progress = Math.min((cartTotal / FREE_SHIPPING_THRESHOLD) * 100, 100);
   const remaining = FREE_SHIPPING_THRESHOLD - cartTotal;
 
