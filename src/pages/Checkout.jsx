@@ -70,6 +70,21 @@ const Checkout = () => {
     }
   };
 
+  // Calcular Frete Automaticamente
+  let shippingCost = 0;
+  if (cartTotal < 100 && formData.estado) {
+    const sudesteSul = ['SP', 'RJ', 'MG', 'ES', 'PR', 'SC', 'RS'];
+    const nordeste = ['BA', 'SE', 'AL', 'PE', 'PB', 'RN', 'CE', 'PI', 'MA'];
+    const centroOeste = ['GO', 'MT', 'MS', 'DF'];
+    
+    if (sudesteSul.includes(formData.estado.toUpperCase())) shippingCost = 19.90;
+    else if (nordeste.includes(formData.estado.toUpperCase())) shippingCost = 29.90;
+    else if (centroOeste.includes(formData.estado.toUpperCase())) shippingCost = 24.90;
+    else shippingCost = 34.90;
+  }
+  
+  const finalTotal = cartTotal + shippingCost;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -77,8 +92,9 @@ const Checkout = () => {
     try {
       const response = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:3001'}/api/checkout`, {
         ...formData,
-        amount: cartTotal,
-        items: cart
+        amount: finalTotal,
+        items: cart,
+        shippingFee: shippingCost
       });
 
       if (response.data.success) {
@@ -86,7 +102,7 @@ const Checkout = () => {
           state: { 
             pixCode: response.data.pixCode,
             pixQrCode: response.data.pixQrCode,
-            amount: cartTotal 
+            amount: finalTotal 
           } 
         });
       }
@@ -283,13 +299,17 @@ const Checkout = () => {
                 </div>
                 <div className="flex justify-between">
                   <span>Entrega</span>
-                  <span className="text-[#017a54] font-bold">GRÁTIS</span>
+                  {shippingCost === 0 ? (
+                    <span className="text-[#017a54] font-bold">GRÁTIS</span>
+                  ) : (
+                    <span className="text-gray-900 font-bold">+ R$ {shippingCost.toFixed(2).replace('.', ',')}</span>
+                  )}
                 </div>
               </div>
 
               <div className="flex justify-between items-center mb-8">
                 <span className="font-bold text-gray-900 text-lg">Total</span>
-                <span className="text-3xl font-black text-[#017a54]">R$ {cartTotal.toFixed(2).replace('.', ',')}</span>
+                <span className="text-3xl font-black text-[#017a54]">R$ {finalTotal.toFixed(2).replace('.', ',')}</span>
               </div>
 
               <div className="space-y-4">
