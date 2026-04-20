@@ -75,7 +75,7 @@ const Checkout = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:3001/api/checkout', {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:3001'}/api/checkout`, {
         ...formData,
         amount: cartTotal,
         items: cart

@@ -35,7 +35,7 @@ const Payment = () => {
     // 2. Status Polling
     const pollStatus = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/api/orders/${orderId}/status`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:3001'}/api/orders/${orderId}/status`);
         if (response.data.status === 'PAID') {
           setStatus('PAID');
           if (window.fbq) {
