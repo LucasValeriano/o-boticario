@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import desktopBanner from '../assets/hero-banner.webp';
+const desktopBanner = '/assets/hero-banner.webp';
 
 const Hero = () => {
   const ref = useRef(null);

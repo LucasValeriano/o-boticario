@@ -49,7 +49,7 @@ const Footer = () => {
             <h4 className="font-bold text-gray-800 mb-6">Formas de Pagamento</h4>
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-4 bg-white border border-gray-100 p-4 rounded-2xl shadow-sm">
-                <img src="/src/assets/pix-logo.png" alt="PIX" className="h-16 w-auto object-contain drop-shadow-md" />
+                <img src="/assets/pix-logo.png" alt="PIX" className="h-16 w-auto object-contain drop-shadow-md" />
                 <div>
                    <p className="text-[10px] font-black text-gray-900 uppercase tracking-widest leading-none">PIX</p>
                    <p className="text-[9px] text-gray-400 font-bold uppercase mt-1">Aprovação Imediata</p>

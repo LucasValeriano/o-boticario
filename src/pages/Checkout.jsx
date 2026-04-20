@@ -229,7 +229,7 @@ const Checkout = () => {
                 <div className="border-2 border-[#017a54] bg-[#017a54]/5 p-6 rounded-2xl flex items-center justify-between mb-8 group transition-all cursor-default">
                   <div className="flex items-center gap-5">
                     <div className="bg-white p-4 rounded-xl shadow-sm border border-[#017a54]/10 group-hover:scale-105 transition-transform flex items-center justify-center min-w-[100px]">
-                      <img src="/src/assets/pix-logo.png" alt="PIX" className="h-16 w-auto object-contain drop-shadow-md" />
+                      <img src="/assets/pix-logo.png" alt="PIX" className="h-16 w-auto object-contain drop-shadow-md" />
                     </div>
                     <div>
                       <div className="flex items-center gap-2 mb-1">
