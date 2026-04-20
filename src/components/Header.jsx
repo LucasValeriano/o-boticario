@@ -33,12 +33,9 @@ const Header = () => {
               <Menu size={24} />
             </button>
             <Link to="/" className="flex items-center hover:opacity-80 transition-opacity">
-              <svg width="120" height="24" viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#017a54]">
-                {/* Fallback to text if SVG gets too complex, but using strict font styling to match logo */}
-                <text x="0" y="18" fontFamily="Playfair Display, serif" fontSize="20" fontWeight="700" fill="#017a54" letterSpacing="1px">
-                  O BOTICÁRIO
-                </text>
-              </svg>
+              <h1 className="text-[18px] sm:text-[22px] font-serif font-bold text-[#017a54] tracking-[0.08em] whitespace-nowrap">
+                O BOTICÁRIO
+              </h1>
             </Link>
           </div>
 
