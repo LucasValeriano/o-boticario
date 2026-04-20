@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+:root {
+  --brand-green: #017a54;
+  --brand-gold: #c9a227;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Custom resets for pixel-perfect parity */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
