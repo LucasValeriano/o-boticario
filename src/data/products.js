@@ -42,5 +42,93 @@ export const products = [
     rating: 5,
     reviews: 156,
     description: "Ideal para massagens relaxantes, este creme proporciona hidratação profunda e uma sensação de bem-estar única com aroma de cereja."
+  },
+  {
+    id: 5,
+    name: "Geléia Iluminadora Corporal Lily Glow 250g",
+    price: 113.90,
+    originalPrice: 124.90,
+    image: "/assets/product_5.jpg",
+    badge: "PREMIUM",
+    rating: 4.9,
+    reviews: 210,
+    description: "Pele iluminada e perfumada com a sofisticação de Lily. Partículas de brilho que realçam sua beleza natural."
+  },
+  {
+    id: 6,
+    name: "Nativa SPA Jasmim Sambac Loção Anti-stress 400ml",
+    price: 47.80,
+    originalPrice: 74.90,
+    image: "/assets/product_6.jpg",
+    badge: "-36% OFF",
+    rating: 4.7,
+    reviews: 98,
+    description: "Sinta o efeito relaxante do jasmim sambac em sua pele. Combate os efeitos do stress oxidativo e hidrata profundamente."
+  },
+  {
+    id: 7,
+    name: "Creme Esfoliante Doçura na Pessegura 200g",
+    price: 46.70,
+    originalPrice: 52.90,
+    image: "/assets/product_7.jpg",
+    badge: "QUERIDINHO",
+    rating: 4.8,
+    reviews: 74,
+    description: "Esfoliação suave com cheirinho de pêssego. Deixa a pele renovada e extremamente macia."
+  },
+  {
+    id: 8,
+    name: "Sérum Facial Botik Retinol Puro 30ml",
+    price: 87.50,
+    originalPrice: 164.90,
+    image: "/assets/product_8.jpg",
+    badge: "-47% OFF",
+    rating: 4.9,
+    reviews: 320,
+    description: "Tecnologia Suíça para redução de rugas e linhas de expressão. Resultados visíveis em poucas semanas de uso."
+  },
+  {
+    id: 9,
+    name: "Malbec Desodorante Colônia 100ml",
+    price: 184.90,
+    originalPrice: 209.90,
+    image: "/assets/product_9.jpg",
+    badge: "ÍCONE",
+    rating: 5,
+    reviews: 1240,
+    description: "A fragrância masculina mais vendida do Brasil. Criada através de um processo exclusivo de maceração em barris de carvalho francês."
+  },
+  {
+    id: 10,
+    name: "Egeo Bomb Black Desodorante Colônia 90ml",
+    price: 124.90,
+    originalPrice: 139.90,
+    image: "/assets/product_10.jpg",
+    badge: "JOVEM",
+    rating: 4.7,
+    reviews: 450,
+    description: "Uma explosão de cores e sensações. Fragrância ousada para quem gosta de marcar presença."
+  },
+  {
+    id: 11,
+    name: "Kit Presente Boticário Lily (3 itens)",
+    price: 129.90,
+    originalPrice: 159.90,
+    image: "/assets/product_11.jpg",
+    badge: "IDEAL PARA PRESENTE",
+    rating: 5,
+    reviews: 89,
+    description: "Surpreenda com a elegância de Lily. O kit contém um Eau de Parfum, um Creme Acetinado e uma embalagem especial."
+  },
+  {
+    id: 12,
+    name: "Quasar Classic Desodorante Colônia 125ml",
+    price: 104.90,
+    originalPrice: 144.90,
+    image: "/assets/product_12.jpg",
+    badge: "-28% OFF",
+    rating: 4.8,
+    reviews: 630,
+    description: "Frescor e energia para o seu dia a dia. Uma fragrância clássica que nunca sai de moda."
   }
 ];
