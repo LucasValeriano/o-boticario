@@ -3,19 +3,19 @@ import { Facebook, Instagram, Twitter, Youtube, ShieldCheck } from 'lucide-react
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 pt-16 pb-8 border-t border-gray-200">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+    <footer className="bg-[#fcfaf9] pt-12 pb-6 border-t border-[#f2ebe5]">
+      <div className="container max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand Info */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-brand-green">oBoticário</h2>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              Há mais de 40 anos entregando beleza e autocuidado. Nossos produtos são feitos com amor e respeito ao meio ambiente.
+            <h2 className="text-xl font-serif font-bold text-[#017a54]">O BOTICÁRIO</h2>
+            <p className="text-gray-600 text-[13px] leading-relaxed">
+              O Boticário é a marca de beleza mais amada do Brasil. Encontre opções incríveis de maquiagem, perfumaria e cuidados com a pele.
             </p>
             <div className="flex gap-4">
               {[Instagram, Facebook, Twitter, Youtube].map((Icon, i) => (
-                <button key={i} className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-white transition-all shadow-sm">
-                  <Icon size={18} />
+                <button key={i} className="w-9 h-9 rounded-full bg-white border border-gray-200 flex items-center justify-center text-[#017a54] hover:bg-[#017a54] hover:text-white transition-all shadow-sm">
+                  <Icon size={16} />
                 </button>
               ))}
             </div>
@@ -23,22 +23,22 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-gray-800 mb-6">Institucional</h4>
-            <ul className="space-y-4 text-sm text-gray-500">
-              {['Sobre o Boticário', 'Portal de Privacidade', 'Termos de Uso', 'Trabalhe Conosco'].map((link) => (
+            <h4 className="font-bold text-gray-900 mb-5 text-sm uppercase">Sobre o Boticário</h4>
+            <ul className="space-y-3 text-[13px] text-gray-600">
+              {['Quem Somos', 'Nossas Marcas', 'Trabalhe Conosco', 'Sustentabilidade', 'Mapa do Site'].map((link) => (
                 <li key={link}>
-                  <a href="#" className="hover:text-brand-green transition-colors">{link}</a>
+                  <a href="#" className="hover:text-[#017a54] transition-colors">{link}</a>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-gray-800 mb-6">Ajuda & Suporte</h4>
-            <ul className="space-y-4 text-sm text-gray-500">
-              {['Minha Conta', 'Rastrear Pedido', 'Trocas e Devoluções', 'Central de Atendimento'].map((link) => (
+            <h4 className="font-bold text-gray-900 mb-5 text-sm uppercase">Atendimento</h4>
+            <ul className="space-y-3 text-[13px] text-gray-600">
+              {['Dúvidas Frequentes', 'Fale Conosco', 'Meus Pedidos', 'Trocas e Devoluções', 'Políticas de Privacidade'].map((link) => (
                 <li key={link}>
-                  <a href="#" className="hover:text-brand-green transition-colors">{link}</a>
+                  <a href="#" className="hover:text-[#017a54] transition-colors">{link}</a>
                 </li>
               ))}
             </ul>
@@ -46,28 +46,30 @@ const Footer = () => {
 
           {/* Payments */}
           <div>
-            <h4 className="font-bold text-gray-800 mb-6">Formas de Pagamento</h4>
+            <h4 className="font-bold text-gray-900 mb-5 text-sm uppercase">Pagamento Seguro</h4>
             <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-4 bg-white border border-gray-100 p-4 rounded-2xl shadow-sm">
-                <img src="/assets/pix-logo.png" alt="PIX" className="h-16 w-auto object-contain drop-shadow-md" />
-                <div>
-                   <p className="text-[10px] font-black text-gray-900 uppercase tracking-widest leading-none">PIX</p>
-                   <p className="text-[9px] text-gray-400 font-bold uppercase mt-1">Aprovação Imediata</p>
-                </div>
+              <div className="flex items-center gap-4 bg-white border border-gray-200 p-3 rounded-lg shadow-sm">
+                <img src="/assets/pix-logo.png" alt="PIX" className="h-10 w-auto object-contain mx-auto" />
               </div>
               
-              <div className="flex items-center gap-2 text-[10px] text-gray-400 font-medium">
-                <ShieldCheck size={14} className="text-brand-green" />
-                <span>Pagamento 100% Seguro</span>
+              <div className="flex items-center gap-2 text-[11px] text-gray-500 font-medium">
+                <ShieldCheck size={16} className="text-[#017a54]" />
+                <span>Compra 100% protegida e blindada</span>
               </div>
             </div>
           </div>
 
         </div>
 
-        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-gray-400 font-medium">
-          <p>© 2026 BOTICÁRIO. TODOS OS DIREITOS RESERVADOS.</p>
-          <p>PRODUTOS DESTINADOS AO CONSUMO FINAL. É PROIBIDA A REVENDA.</p>
+        <div className="border-t border-gray-200 pt-6 flex flex-col text-center md:text-left gap-4 text-[10px] text-gray-500 font-medium leading-[1.6]">
+          <p>
+            BOTICÁRIO PRODUTOS DE BELEZA LTDA. | CNPJ: 11.137.051/0719-54 | Rua das Borges, 1000 - São Paulo, SP - CEP: 05777-001 <br/>
+            E-mail: atendimento@boticario.com.br <br/>
+            As imagens presentes em nosso site são meramente ilustrativas e suas cores podem sofrer alterações conforme variações de telas. Promocões válidas apenas enquanto durarem os estoques. Preços podem variar.
+          </p>
+          <p className="mt-2 text-[#017a54]">
+            © {new Date().getFullYear()} O Boticário. Todos os direitos reservados.
+          </p>
         </div>
       </div>
     </footer>
