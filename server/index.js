@@ -127,22 +127,7 @@ app.get('/api/orders/:id/status', async (req, res) => {
     const order = await get('SELECT * FROM orders WHERE id = ?', [req.params.id]);
     if (!order) return res.status(404).json({ message: 'Order not found' });
 
-    // Mock: Simulate payment approval if order is older than 30 seconds
-    const orderAge = (Date.now() - new Date(order.created_at).getTime()) / 1000;
-    if (order.status === 'PENDING' && orderAge > 30 && PARADISE_API_KEY === 'your_api_key_here') {
-      await run('UPDATE orders SET status = ? WHERE id = ?', ['PAID', req.params.id]);
-      order.status = 'PAID';
-      
-      // Fire Purchase CAPI
-      try {
-        const lead = await get('SELECT email, phone, cpf FROM leads WHERE id = ?', [order.lead_id]);
-        if (lead) {
-          sendCAPIEvent('Purchase', req, lead, { value: order.amount, currency: 'BRL' });
-        }
-      } catch (err) {
-        console.error('Failed to send CAPI Purchase:', err);
-      }
-    }
+    // O status agora refletirá apenas a realidade do banco de dados (PENDING até receber webhook/aprovação real)
 
     res.json({ status: order.status });
   } catch (err) {
