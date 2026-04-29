@@ -14,29 +14,29 @@ const ProductCard = ({ product }) => {
 
   return (
     <motion.div 
-      className="bg-white rounded-[16px] overflow-hidden flex flex-col h-full transition-all group relative border border-gray-200/60 p-4"
+      className="bg-white rounded-[16px] overflow-hidden flex flex-col items-center h-full transition-all group relative border border-gray-200/60 p-4 gap-4"
     >
       {/* Product Image Section */}
       <div 
         onClick={handleNavigate}
-        className="relative aspect-square w-full mb-4 rounded-lg overflow-hidden bg-white cursor-pointer"
+        className="relative w-full aspect-square flex-shrink-0 rounded-lg overflow-hidden bg-[#f9f9f9] cursor-pointer group-hover:bg-[#f0f0f0] transition-colors"
       >
         <img 
           src={product.image} 
           alt={product.name} 
-          className="w-full h-full object-contain mix-blend-multiply hover:scale-105 transition-transform duration-500 px-4 py-4"
+          className="w-full h-full object-contain mix-blend-multiply hover:scale-105 transition-transform duration-500 p-4"
         />
         {product.badge && (
-          <span className="absolute top-2 left-2 bg-[#e91428] text-white text-[10px] font-bold px-2.5 py-1 rounded-sm uppercase tracking-wider z-10">
+          <span className="absolute top-2 left-2 bg-[#e91428] text-white text-[9px] font-bold px-2 py-1 rounded uppercase tracking-wider z-10 shadow-sm">
             {product.badge}
           </span>
         )}
       </div>
 
       {/* Product Info */}
-      <div className="flex flex-col flex-grow text-left">
+      <div className="flex flex-col flex-grow text-center py-1 w-full">
         {/* Rating */}
-        <div className="flex items-center gap-1 mb-2">
+        <div className="flex items-center justify-center gap-1 mb-2">
           <div className="flex items-center">
             {[...Array(5)].map((_, i) => (
               <Star 
@@ -64,7 +64,7 @@ const ProductCard = ({ product }) => {
                 R$ {product.originalPrice.toFixed(2).replace('.', ',')}
               </span>
             )}
-            <div className="flex items-baseline gap-1">
+            <div className="flex items-baseline justify-center gap-1">
               <span className="text-xl font-extrabold text-[#017a54] tracking-tight">
                 R$ {product.price.toFixed(2).replace('.', ',')}
               </span>

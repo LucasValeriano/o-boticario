@@ -8,14 +8,13 @@ const Payment = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { orderId } = useParams();
-  const { pixCode, amount } = location.state || {};
+  const { pixCode, pixQrCode, amount } = location.state || {};
   const [copied, setCopied] = useState(false);
   const [timeLeft, setTimeLeft] = useState(900); // 15 minutes
   const [status, setStatus] = useState('PENDING');
 
-  const pixQrCodeUrl = pixCode 
-    ? `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(pixCode)}`
-    : null;
+  const finalQrCode = pixQrCode?.startsWith('data:image') ? pixQrCode : (pixQrCode ? `data:image/png;base64,${pixQrCode}` : null);
+  const pixQrCodeUrl = finalQrCode || (pixCode ? `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(pixCode)}` : null);
 
   useEffect(() => {
     if (!pixCode || !orderId) {

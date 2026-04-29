@@ -1,12 +1,12 @@
 import React from 'react';
 
 const bubbles = [
-  { name: 'Boti Promo', img: 'https://images.unsplash.com/photo-1629198688000-71f23e745b6e?w=150&q=80&fit=crop' }, // working
-  { name: 'Lançamentos', img: 'https://images.unsplash.com/photo-1583241475880-083f84372725?w=150&q=80&fit=crop' }, // new cosmetics
-  { name: 'Presentes', img: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=150&q=80&fit=crop' }, // working
-  { name: 'Perfumaria', img: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?w=150&q=80&fit=crop' }, // perfume
-  { name: 'Skincare', img: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=150&q=80&fit=crop' }, // skincare cream
-  { name: 'Maquiagem', img: 'https://images.unsplash.com/photo-1516975080665-2428b49e6f80?w=150&q=80&fit=crop' } // makeup
+  { name: 'Boti Promo', img: 'https://images.unsplash.com/photo-1629198688000-71f23e745b6e?w=150&q=80&fit=crop' },
+  { name: 'Lançamentos', img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=150&q=80&fit=crop' },
+  { name: 'Presentes', img: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=150&q=80&fit=crop' },
+  { name: 'Perfumaria', img: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?w=150&q=80&fit=crop' },
+  { name: 'Skincare', img: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=150&q=80&fit=crop' },
+  { name: 'Maquiagem', img: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=150&q=80&fit=crop' }
 ];
 
 const CategoryBubbles = () => {

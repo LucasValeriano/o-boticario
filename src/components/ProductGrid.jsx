@@ -15,8 +15,8 @@ const ProductGrid = () => {
         </a>
       </div>
 
-      {/* Horizontal slider on mobile, Grid on desktop */}
-      <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-4 lg:px-0 pb-6" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+      {/* Vertical list layout */}
+      <div className="grid grid-cols-1 gap-4 px-4 lg:px-0 pb-6">
         {products.map((product, index) => (
           <motion.div
             key={product.id}
@@ -24,7 +24,7 @@ const ProductGrid = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="min-w-[80vw] sm:min-w-0 snap-center"
+            className="w-full"
           >
             <ProductCard product={product} />
           </motion.div>
